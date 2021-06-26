@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>Empleados</title>
+</head>
+
+<body>
+    <main>
+        <h1 class="text-center">Empleados</h1>
+        <form class="d-flex justify-content-center my-2" method="GET" action="/app/crear">
+            <button class="btn btn-success">Nuevo</button>
+        </form>
+        <div class="container d-flex justify-content-center">
+            <% if(empleados.length> 0){ %>
+                <table class="table">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Legajo</th>
+                            <th>Apellido</th>
+                            <th>Nombre</th>
+                            <th>Dni</th>
+                            <th>Sector</th>
+                            <th>Fecha Ingreso</th>
+                            <th>Activo</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% empleados.forEach( empleado=> { %>
+                            <tr class="text-center">
+                                <td>
+                                    <%= empleado.legajo %>
+                                </td>
+                                <td>
+                                    <%= empleado.apellido %>
+                                </td>
+                                <td>
+                                    <%= empleado.nombre %>
+                                </td>
+                                <td>
+                                    <%= empleado.dni %>
+                                </td>
+                                <td>
+                                    <%= empleado.sector %>
+                                </td>
+                                <td>
+                                    <%= empleado.fechaIngreso %>
+                                </td>
+                                <td>
+                                    <%= empleado.activo ? 'SI' : 'NO' %>
+                                </td>
+                                <td class="d-flex justify-content-center">
+                                    <form class="mr-1" method="GET" action="empleados/<%= empleado.legajo %>/modificar" method="GET">
+                                        <button class="btn btn-warning">Actualizar</button>
+                                    </form>
+                                    <form class="mr-1" method="GET" action="empleados/<%= empleado.legajo %>/eliminar">
+                                        <button class="btn btn-danger">Borrar</button>
+                                    </form>
+                                    <form method="GET" action='/app/empleados/<%= empleado.legajo %>'>
+                                        <button class="btn btn-primary">Ver</button>
+                                    </form>
+                                </td>
+
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+                <% }else{ %>
+                    No hay empleados
+                    <% } %>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

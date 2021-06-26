@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>
+        Actualizar
+    </title>
+</head>
+
+<body>
+    <main>
+        <h1 class="text-center">
+            Actualizar
+        </h1>
+        <div class="container d-flex justify-content-center">
+            <form class="form" action="/app/update" method="POST">
+                <div class="my-1">
+                    <input name="legajo" class="form-control text-center" placeholder="Legajo" <% if(empleado){ %> value="
+                    <%= empleado.legajo %>"
+                        <% } %> >
+                </div>
+                <div class="my-1">
+                    <input name="apellido" class="form-control text-center" placeholder="Apellido" <% if(empleado){ %> value="
+                    <%= empleado.apellido %>"
+                        <% } %> >
+                </div>
+                <div class="my-1">
+                    <input name="nombre" class="form-control text-center" placeholder="Nombre" <% if(empleado){ %> value="
+                    <%= empleado.nombre %>"
+                        <% } %> >
+                </div>
+                <div class="my-1">
+                    <input name="dni" class="form-control text-center" placeholder="Dni" <% if(empleado){ %> value="
+                    <%=
+                        empleado.dni %>"
+                        <% } %> >
+                </div>
+                <div class="my-1">
+                    <input name="sector" class="form-control text-center" placeholder="Sector" <% if(empleado){ %> value="
+                    <%= empleado.sector %>"
+                        <% } %> >
+                </div>
+                <div class="my-1">
+                    <input name="fechaIngreso" type="date" class="form-control text-center" placeholder="Fecha" <% if(empleado){ %> value="
+                    <%= empleado.fechaIngreso %>"
+                        <% } %> >
+                </div>
+                <div class="my-1">
+                    <input name="activo" class="form-control text-center" placeholder="Activo" <% if(empleado){ %> value="
+                    <%= empleado.activo %>"
+                        <% } %> >
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-success">
+                        Actualizar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>Eliminar</title>
+</head>
+
+<body>
+    <main>
+        <h1 class="text-center">Eliminar Empleado</h1>
+        <p class="text-center">¿Esta seguro que desea eliminar el empleado seleccionado?</p>
+        <div class="container d-flex justify-content-center">
+            <form class="form" action="/app/delete" method="POST">
+                <div class="my-1 text-center">
+                    <input name="legajo" class="form-control text-center" placeholder="Legajo" <% if(empleado){ %> value="
+                    <%= empleado.legajo %>"
+                        <% } %> >
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-danger">Borrar</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

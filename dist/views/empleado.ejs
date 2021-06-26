@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>Empleados</title>
+</head>
+
+<body>
+    <main>
+        <h1 class="d-flex justify-content-center">Empleado</h1>
+        <% if(empleado) {%>
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <th>Legajo</th>
+                        <th>Apellido</th>
+                        <th>Nombre</th>
+                        <th>Dni</th>
+                        <th>Sector</th>
+                        <th>Fecha Ingreso</th>
+                        <th>Activo</th>
+                    </thead>
+                    <tbody>
+                        <td>
+                            <%= empleado.legajo %>
+                        </td>
+                        <td>
+                            <%= empleado.apellido %>
+                        </td>
+                        <td>
+                            <%= empleado.nombre %>
+                        </td>
+                        <td>
+                            <%= empleado.dni %>
+                        </td>
+                        <td>
+                            <%= empleado.sector %>
+                        </td>
+                        <td>
+                            <%= empleado.fechaIngreso %>
+                        </td>
+                        <td>
+                            <%= empleado.activo ? 'SI' : 'NO' %>
+                        </td>
+                    </tbody>
+                </table>
+            </div>
+            <% }else{ %>
+                <h1 class="text-danger">No existe el empleado</h1>
+                <% } %>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
